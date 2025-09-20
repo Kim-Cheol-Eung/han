@@ -1,45 +1,39 @@
-# 📝[2025년 한이음 드림업 공모전 템플릿]
-- 이 파일은 2025년 한이음 드림업 프로젝트를 수행하는 학생들에게 README 작성의 가이드라인을 제공하기 위해 제작되었습니다.
-- [Git & Github 기초사용법 알아보기](https://github.com/hanium-dreamup-challenge/git_guide/blob/main/README_git_guide.md)
----
-## **💡README 작성방법**
-- 프로젝트에서 사용되는 소스코드를 레포지토리에 업로드 한 후, 아래 가이드에 따라 README.md파일을 작성해주세요.
-- 필수 작성 항목(5가지) : 프로젝트 개요, 팀원 소개, 시스템 구성도, 작품 소개영상, 핵심 소스코드 
-- 프로젝트 저장소명 규칙 : `https://github.com/깃허브계정명/프로젝트 번호`
-- 예시) 깃허브 계정이 hanium이고, 프로젝트 번호가 25_HC001일 경우 -> `https://github.com/hanium/25_HC001`
-- 아래 항목 및 내용은 이해를 돕기위한 예시입니다. 참고만 하되 자유롭게 추가 및 작성해주시기 바랍니다.
-
----
-
 ## **💡1. 프로젝트 개요**
 
 **1-1. 프로젝트 소개**
-- 프로젝트 명 : 한이음 드림업 AI검색 서비스
-- 프로젝트 정의 : 사용자의 검색 의도를 이해하고 최적의 정보를 제공하는 AI 기반 맞춤형 검색 서비스
-  <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/b25d0039-dfc8-4a6f-85c0-567a92e4039f" /></br>
+- 프로젝트 명 : 인공지능기반의 노인 낙상 예측 시스템 구현
+- 프로젝트 정의 : 실시간 낙상 예측 및 감지 시스템
+  <img width="400" height="400" alt="image" src="https://www.hanemall.com/img/product/2023-04-12_so2d2" /></br>
 
 **1-2. 개발 배경 및 필요성**
-- 현대 사회는 방대한 정보가 실시간으로 생성되고 축적되고 있습니다. 그러나 사용자가 원하는 정확한 정보를 찾기 위해서는 여전히 많은 시간과 노력이 필요합니다. 기존 키워드 기반 검색 방식은 사용자의 맥락이나 의도를 충분히 반영하지 못해 효율성이 떨어집니다. 따라서 사용자의 검색 목적을 인공지능이 이해하고 개인화된 결과를 제공하는 맞춤형 검색 서비스가 필요합니다.
+- 낙상 후 사망률이 높아 예방과 신속한 대응이 필수적이다. 기존의 낙상 감지 시스템(CCTV, 웨어러블 기기, 응급 버튼 등)은 개인정보 보호, 착용 거부감, 비효율적인 감지 등의 한계를 가진다. 이를 해결하기 위해 인공지능(AI) 기반 실시간 낙상 예측 및 감지 시스템이 필요하다.
 
 **1-3. 프로젝트 특장점**
-- 사용자의 검색 의도와 맥락을 이해하는 자연어 이해 기반 검색 서비스
-- 단순 키워드 매칭이 아닌 의미 기반 정보 추천 및 순위화
-- 개인별 기록과 관심사를 반영한 맞춤형 검색 결과 제공
-- 다양한 데이터 소스를 연동해 멀티도메인 활용 가능성 확보
-- 최신 AI/ML 프레임워크와 대규모 언어모델(LLM)을 활용한 최적화된 사용자 경험
+- 인력 기반 감지 : 병원 내 인력에 의존하는 낙상 감지는 실시간 인지 및 대응에 한계가 명확하며, 잦은 오류와 인력 소모를 야기함. 본 시스템은 AI 기반 자동 감지로 이러한 인력 의존도를 낮춤.
+- 단순 센서/웨어러블 기기 : 단순 센서는 실시간 인지에 한계가 있고, 웨어러블 기기는 환자의 지속적인 착용이 어려워 실효성이 낮음. 본 시스템은 비침습적인 CCTV 기반으로 이러한 착용의 불편함과 실효성 문제를 
+해결.
+- 정확도 및 실시간성 : 기존 시스템이 제공하지 못하는 실시간 낙상 감지 및 높은 정확도를 제공함.
+- 통합 분석 : YOLOv8을 통한 객체 탐지, AlphaPose를 통한 자세 추정, ST-GCN을 통한 시간 흐름 분석을 결합한 다중 조건 기반 앙상블 로직으로 낙상을 판단. 이는 단순 센서 기반 시스템으로는 불가능한 정밀한 판단을 가능하게 함.- 확장성 및 범용성 : 다양한 병실 구조와 환자 유형에도 적용 가능하도록 설계되어, 기존 시스템 대비 확장성이 뛰어남.
+ - 대부분의 유사 연구가 객체 탐지나 자세 추정 중 한 가지 기술에 중점을 두는 반면, 본 프로젝트는 YOLOv8, AlphaPose, ST-GCN을 유기적으로 결합하여 낙상 감지의 정확도와 신뢰성을 극대화하였음.
+ - 대부분의 연구가 공개된 일반 데이터 셋을 활용하고, 실제 데이터를 추가해서 보강하였음. 본 프로젝트는 실제 병원 병실 내 낙상 장면을 직접 촬영한 영상 데이터를 기반으로 학습용 데이터 셋을 구축했음. 이는 실제 병원 환경에서 발생할 수 있는 다양한 시나리오(정상, 위험, 낙상 자세 등)를 반영하여 모델의 현실 적용 가능성과 정확도를 높일 수 있음.
+ - 감지 모델 개발에만 집중하는 경우가 많은 유사 연구와 달리, 본 프로젝트는 감지된 낙상 정보를 의료진 단말기로 즉시 전송하는 실시간 알림 시스템을 구축하였음. 이는 실제 병원 환경에서 즉각적인 대응을 가능하게 하는 중요한 실용적 차별점임.
 
-**1-4. 주요 기능**
-- AI 맞춤 검색 서비스 : 검색 의도를 분석하고 개인화된 결과 제공
-- 자연어 질의 처리 : 키워드뿐 아니라 문장 단위 질문도 이해 가능
+**1-4. 소프트웨어(S/W) 주요 기능**
+- 실시간 객체 탐지 : YOLOv8 기반으로 환자 및 의료진을 실시간으로 인식하여 사람의 위치를 추출함
+- 포즈 추정 및 자세 분석 : AlphaPose를 통해 사람의 관절 위치를 추출하고, 낙상 위험 행동(넘어짐, 쓰러짐 등)을 분석함
 - 의미 기반 추천 : 단순한 ‘정확 단어 일치’가 아닌 맥락과 의미를 기반으로 한 결과 제공
 - 맞춤형 필터링 및 정렬 : 사용자 성향에 따라 검색 결과 필터 및 순위 조정
 - 멀티플랫폼 지원 : 웹·모바일 등 다양한 기기 환경에서 최적화된 검색 경험 제공
 
-**1-5. 기대 효과 및 활용 분야**
-- 기대 효과 : 검색 품질 향상 및 정보 탐색 효율 극대화, 다양한 산업 분야에서 데이터 활용성 확대
-- 활용 분야 : 학술·연구, 커머스·쇼핑, 헬스케어, 뉴스·미디어, 기업 내부 문서 검색 등
+**1-5. 하드웨어(H/W) 주요 기능**
+- 적외선(열화상) 카메라 : 카메라를 활용한 실시간 영상 수집
+- 테스트 및 실증 침대 : 데이터 수집 및 실증 침대 구현
 
-**1-6. 기술 스택**
+**1-6. 기대 효과 및 활용 분야**
+- 기대 효과 : 비접촉 및 비침습성 모니터링, 높은 실시간성 및 정확도, 비용 효율성
+- 활용 분야 : 의료 및 요양 시설, 가정 내 스마트 헬스케어
+
+**1-7. 기술 스택**
 - 프론트엔드 : React, Next.js, Tailwind CSS
 - 백엔드 : Python(FastAPI), Node.js, Django
 - AI/ML : PyTorch, TensorFlow, Hugging Face, OpenAI API
@@ -50,13 +44,10 @@
 ---
 
 ## **💡2. 팀원 소개**
-| <img width="80" height="100" src="https://github.com/user-attachments/assets/ab73bb1c-c1d4-464d-8ad3-635b45d5a8ae" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/c7f66b7c-ab84-41fa-8fba-b49dba28b677" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/c33252c7-3bf6-43cf-beaa-a9e2d9bd090b" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/0d5909f0-fc73-4ab9-be09-4d48e3e71083" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/c7f66b7c-ab84-41fa-8fba-b49dba28b677" > |
+| <img width="80" height="100" src="https://pics.craiyon.com/2024-03-29/TAgYq3VcQKe3IkDw6PBd1A.webp"> | <img width="80" height="100" alt="image" src="https://image2.1004gundam.com/item_images/goods/380/1376406813.jpg"> | <img width="80" height="100" alt="image" src="https://image2.1004gundam.com/item_images/goods/380/1376406811.jpg"> | <img width="80" height="100" alt="image" src="https://www.sideshow.com/storage/product-images/903245/green-ranger-dragonzord_mighty-morphin-power-rangers_feature.jpg"> | <img width="80" height="100" alt="image" src="https://e7.pngegg.com/pngimages/767/8/png-clipart-kimberly-hart-katherine-hillard-pink-super-sentai-mighty-morphin-power-rangers-power-rangers-fictional-character-magenta-thumbnail.png"> | <img width="80" height="100" alt="image" src="https://m.herotime.co.kr/web/product/big/202312/852289aa69b6ac9eb8d5f4d03be0c40f.png"> | <img width="80" height="100" alt="image" src="https://ecimg.cafe24img.com/pg168b06062900060/asl1052/web/product/big/20240401/cb914c20ffcaf86d6d8f593f8420793b.jpg">
 |:---:|:---:|:---:|:---:|:---:|
-| **홍길동** | **한이음** | **최지수** | **이철수** | **김멘토** |
-| • 개발총괄 <br> • UI/UX 기획 | • 백엔드 <br> • 프론트엔드 | • API 개발 <br> • DB 서버 구축 |• 데이터 분석 <br> • 전처리 | • 프로젝트 멘토 <br> • 기술 자문 |
-
-
-
+| **김철응** | **심가은** | **이유빈** | **김백강** | **유민지** | **최지훈** | **안영휘** |
+| • 팀장 <br> • 데이터수집 | • 서류작성&취합 | • 기술개발 | • 장비점검 | • 데이터분석 | • 프로젝트 멘토 <br> | • 지도교수 |
 ---
 ## **💡3. 시스템 구성도**
 > **(참고)** S/W구성도, H/W구성도, 서비스 흐름도 등을 작성합니다. 시스템의 동작 과정 등을 추가할 수도 있습니다.
@@ -86,27 +77,25 @@
 - 소스코드 설명 : API를 활용해서 자동 배포를 생성하는 메서드입니다.
 
 ```Java
-    private static void start_deployment(JsonObject jsonObject) {
-        String user = jsonObject.get("user").getAsJsonObject().get("login").getAsString();
-        Map<String, String> map = new HashMap<>();
-        map.put("environment", "QA");
-        map.put("deploy_user", user);
-        Gson gson = new Gson();
-        String payload = gson.toJson(map);
+    for i, track in enumerate(tracker.tracks):
+        if not track.is_confirmed():
+            continue
+    
+        track_id = track.track_id
+        bbox = track.to_tlbr().astype(int)
+        center = track.get_center().astype(int)
 
-        try {
-            GitHub gitHub = GitHubBuilder.fromEnvironment().build();
-            GHRepository repository = gitHub.getRepository(
-                    jsonObject.get("head").getAsJsonObject()
-                            .get("repo").getAsJsonObject()
-                            .get("full_name").getAsString());
-            GHDeployment deployment =
-                    new GHDeploymentBuilder(
-                            repository,
-                            jsonObject.get("head").getAsJsonObject().get("sha").getAsString()
-                    ).description("Auto Deploy after merge").payload(payload).autoMerge(false).create();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-```
+        action = 'pending..'
+        clr = (0, 255, 0)
+
+        if len(track.keypoints_list) == 30: 
+        #스켈레톤 데이터의 좌표 추출해서 30개인지 확인(유효한 값 확인)
+            pts = np.array(track.keypoints_list, dtype=np.float32)
+            out = action_model.predict(pts, frame.shape[:2])
+            #스켈레톤 데이터로 자세 예측
+            action_name = action_model.class_names[out[0].argmax()]
+            action = '{}: {:.2f}%'.format(action_name, out[0].max() *100)
+```         if action_name == 'Fall Down':
+                clr = (255, 0, 0)
+            elif action_name == 'Lying Down':
+                clr = (255, 200, 0)
